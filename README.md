@@ -7,6 +7,8 @@ The objective of this course is to master the art of AWS networking implementati
 This project will enable me to design and deploy scalable and secure cloud architectures.
 
 ---
+# STUDY NOTES
+---
 
 # AWS VPC Creation and Subnet Configuration
 
@@ -41,6 +43,10 @@ The essential steps to creating a VPC and configuring core network services. The
 ## The Default VPC
 
 The Default VPC is like a starter pack provided by Amazon for your cloud resources. It's a pre-configured space in the Amazon cloud where you can immediately start deploying your applications or services. It has built-in security and network settings to help you get up and running quickly, but you can adjust these as you see fit.
+
+When you start using Amazon VPC, you have a default VPC in each AWS Region. A default VPC comes with a public subnet in each Availability Zone, an internet gateway, and settings to enable DNS resolution. Therefore, you can immediately start launching Amazon EC2 instances into a default VPC.
+
+![default vpc](images/default-vpc.png)
 
 ---
 
