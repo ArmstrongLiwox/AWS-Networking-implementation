@@ -48,12 +48,46 @@ When you start using Amazon VPC, you have a default VPC in each AWS Region. A de
 
 ![default vpc](images/default-vpc.png)
 
+![vpc](images/vpc.jpg)
+
 ---
 
 ---
 ## Creating a new VPC
 
-As we want to learn step by step and observe the components, choose the "VPC only" option, we'll use the "VPC and more" option later. Enter "first-vpc" as the name tag and "10.0.0.0/16" as the IPv4 CIDR. The "10.0.0.0/16" will be the primary IPv4 block and you can add a secondary IPv4 block e.g., "100.64.0.0/16". The use case of secondary CIDR block could be because you're running out of IPs and need to add additional block, or there's a VPC with overlapping CIDR which you need to peer or connect. See this blog post on how a secondary CIDR block is being used in an overlapping IP scenario: https://aws.amazon.com/blogs/networking-and-content-delivery/how-to-solve- private-ip-exhaustion-with-private-nat-solution/
+- To create a new vpc choose the "VPC only" option, we'll use the "VPC and more" option later. 
+
+- Enter "first-vpc" as the name tag and "10.0.0.0/16" as the IPv4 CIDR. 
+
+- The "10.0.0.0/16" will be the primary IPv4 block and you can add a secondary IPv4 block e.g., "100.64.0.0/16". 
+
+- The use case of secondary CIDR block could be because you're running out of IPs and need to add additional block, or there's a VPC with overlapping CIDR which you need to peer or connect. 
+
+- See this blog post on how a secondary CIDR block is being used in an overlapping IP scenario: 
+
+https://aws.amazon.com/blogs/networking-and-content-delivery/how-to-solve- private-ip-exhaustion-with-private-nat-solution/
+
+![create vpc](<images/create vpc.jpg>)
+
+- Leave the tags as default, you can add more tags if you want and click CREATE VPC
+
+- As soon as the VPC is created, it's assigned with a vpc-id and there's a route table created that serves as the main route table - rtb-034f3b111e7c692bc in below example.
+
+![vpc created](<images/vpc created.jpg>)
+
+- Now you have a VPC and a route table, but you won't be able to put anything inside. If you try to create an EC2 instance for example, you can't proceed as it requires subnets. Creating and configuring subnets
+
+---
+
+# Creating and configuring subnets
+
+## What are Subnets?
+
+Subnets are like smaller segments within a VPC that help you organize and manage your resources. 
+
+Subnets are like dividing an office building into smaller sections, where each section represents a department. 
+
+In this analogy, subnets are created to organize and manage the network effectively.
 
 ---
 
