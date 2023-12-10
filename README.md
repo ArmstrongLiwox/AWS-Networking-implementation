@@ -91,5 +91,5 @@ In this analogy, subnets are created to organize and manage the network effectiv
 
 ---
 
-
+![create vpc](<images/create vpc.jpg>)
 
