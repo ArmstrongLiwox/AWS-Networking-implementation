@@ -89,11 +89,15 @@ Subnets are like dividing an office building into smaller sections, where each s
 
 In this analogy, subnets are created to organize and manage the network effectively.
 
+![subnets](images/subnets.jpg)
+
 ---
 
 # Subnet name AZ CIDR block
 
 subnet-public1a eu-north-1a 10.0.11.0/24 subnet-public2b eu-north-1b 10.0.12.0/24 subnet-private1a eu-north-1a 10.0.1.0/24 subnet-private2b eu-north-1b 10.0.2.0/24 Go to VPC > Subnets > Create Subnets and select the VPC that you've created previously - the test-vpc or anything you tagged - your VPC
+
+![cidr](images/cidr.png)
 
 ---
 
@@ -109,7 +113,11 @@ Creating a public subnet is like creating a plot of land with direct road (inter
 
 ### Go to the AWS VPC page.
 
+![create](<images/create subnets.jpg>)
+
 ### Find 'Subnets, click on it, then click 'Create subnet.
+
+![create 2](<images/create subnets2.jpg>)
 
 ### Give this new plot a name, select the big plot (VPC) you want to divide, and leave the IP settings as they are.
 
@@ -117,6 +125,9 @@ Creating a public subnet is like creating a plot of land with direct road (inter
 
 ### Update the route table associated with this subnet to allow traffic to flow to and from the internet.
 
+![subnets 3](<images/create subnets3.jpg>)
+
+![subnet 4](<images/create subnets4.jpg>)
 ---
 
 # Creating a Private
