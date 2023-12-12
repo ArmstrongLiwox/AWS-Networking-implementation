@@ -1,3 +1,7 @@
+## STUDY NOTES AND PROJECT
+
+---
+
 # AWS Networking implementation (VPC, Subnets, IG, NAT, Routing)
 
 ---
@@ -6,8 +10,6 @@ The objective of this course is to master the art of AWS networking implementati
 
 This project will enable me to design and deploy scalable and secure cloud architectures.
 
----
-# STUDY NOTES AND PROJECT
 ---
 
 # AWS VPC Creation and Subnet Configuration
