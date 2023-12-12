@@ -350,25 +350,41 @@ We'll guide you step-by-step on how to create a NAT Gateway and how to link it t
 
 Go to VPC > NAT Gateways and click "Create NAT Gateway"
 
+![nat gateway](<images/nat gateway.jpg>)
+
 ---
 
 Create a NAT Gateway named "test-nat" under one of the privates which i choose the subnet-private1a as the subnet.
+
+![create nat](<images/create nat.jpg>)
+
 
 ---
 
 you need to allocate elastic ip because is requred for the creation of NAT gateway
 
----
-
 Let's go to the route table menu and create a route table for the private subnets. which can create a route table now, Let edit the route table, add a default route to the Network Address Translation (NAT) Gateway
+
+![allocate elastic](<images/allocate elastic.jpg>)
+
+![nat created](<images/nat created.jpg>)
+
 
 ---
 
 Choose route table RTB-Private, select Routes tab, and select Add Route. Under the Target, select the NAT gateway named test-nat
 
+![edit route](<images/edit rt.jpg>)
+
+![added](images/added.jpg)
+
 ---
 
 Next, go to the "Subnet associations" tab and click "Edit subnet associations"
+
+![subnet associations](<images/edit subnets association.jpg>)
+
+![save subnet associations](<images/save subnet associations.jpg>)
 
 ---
 
