@@ -73,6 +73,8 @@ https://aws.amazon.com/blogs/networking-and-content-delivery/how-to-solve- priva
 
 - As soon as the VPC is created, it's assigned with a vpc-id and there's a route table created that serves as the main route table - rtb-034f3b111e7c692bc in below example.
 
+![rounting table](<images/routing table.jpg>)
+
 ![vpc created](<images/vpc created.jpg>)
 
 - Now you have a VPC and a route table, but you won't be able to put anything inside. If you try to create an EC2 instance for example, you can't proceed as it requires subnets. Creating and configuring subnets
@@ -92,6 +94,62 @@ In this analogy, subnets are created to organize and manage the network effectiv
 ![subnets](images/subnets.jpg)
 
 ---
+```
+Subnet name
+AZ CIDR block
+subnet-public1a eu-north-1a 10.0.11.0/24
+subnet-public2b eu-north-1b 10.0.12.0/24
+subnet-private1a eu-north-1a 10.0.1.0/24
+subnet-private2b eu-north-1b 10.0.2.0/24
+```
+---
+
+Go to VPC > 
+
+Subnets > 
+
+![create subnet](<images/create subnets4.jpg>)
+
+Create Subnets and select the VPC that you've created previously - 
+
+the test-vpc or anything you tagged your VPC (first-vpc)
+
+![subnet](<images/create subnets3.jpg>)
+
+click on ***create subnet***
+
+---
+
+Enter the subnet settings detail. 
+
+Don't click the "Create subnet" button just yet, 
+
+click the Add new subnet button to add the remaining subnets then after completing all the required subnets, 
+
+click "Create subnet" 
+
+Note: if you don't choose a zone, it will be randomly picked by AWS.
+
+---
+
+![add subnets](<images/add subnets.jpg>)
+
+---
+
+Once done, you should see all the subnets you just created on the console. 
+
+If you missed any, just create a subnet and select your desired VPC. 
+
+As of now, you can deploy EC2 instances into the VPC by selecting one of the subnets, 
+
+but the public subnet doesn't have any Internet access at this stage. 
+
+When you select a public subnet > route, you'll see it uses the main route table and only has the local route, 
+
+no default route for Internet access.
+
+---
+
 
 # Subnet name AZ CIDR block
 
@@ -128,6 +186,8 @@ Creating a public subnet is like creating a plot of land with direct road (inter
 ![subnets 3](<images/create subnets3.jpg>)
 
 ![subnet 4](<images/create subnets4.jpg>)
+
+![subnets5](<images/subnets created.jpg>)
 ---
 
 # Creating a Private
@@ -137,13 +197,16 @@ Here's how you do it:
 
 • Go to the AWS VPC page. 
 
-• Find 'Subnets, click on it, then click 'Create subnet. Give this new plot a name, select the big plot (VPC) you want to divide, and leave the IP settings as they are. Don't attach an Internet Gateway to this subnet, keeping it secluded. 
+• Find 'Subnets, click on it, then click 'Create subnet. 
+Give this new plot a name, select the big plot (VPC) you want to divide, and leave the IP settings as they are. 
+
+• Don't attach an Internet Gateway to this subnet, keeping it secluded. 
 
 • The route table for this subnet doesn't allow direct traffic to and from the internet.
 
 ---
 
-## Working with Public and Private Subnets
+# Working with Public and Private Subnets
 
 Public subnets are great for resources that need to connect to the internet, like web servers. Private subnets are great for resources that you don't want to expose to the internet, like databases.
 
@@ -154,9 +217,15 @@ Always remember, ***use public subnets for resources that need internet access a
 
 # Internet Gateway and Routing Table
 
+
+
 ## Introduction to Internet Gateway and Routing Table
 
 Just like in a real city, in your virtual city (VPC), you need roads (Internet Gateway) for people (data) to come and go. And you also need a map or GPS (Routing Table) to tell people (data) which way to go to reach their destination.
+
+![routing tables](<images/routing table.jpg>)
+
+---
 
 ## What is an Internet Gateway?
 
@@ -165,6 +234,10 @@ An Internet Gateway in AWS is like a road that connects your city (VPC) to the o
 Deep Dive into Internet Gateways To give your public subnet access to the main road (internet), you need an Internet Gateway. 
 
 This acts like the entrance and exit to your property. We'll show you how to create and attach an Internet Gateway to your VPC.
+
+![gateway](images/gateway.png)
+
+---
 
 ## Public Subnets
 Technically, the subnets are still private. You'll need these to make it work as public subnets:
@@ -177,13 +250,25 @@ Technically, the subnets are still private. You'll need these to make it work as
 
 * Go to VPC > Internet gateways and click ***"Create internet gateway"***
 
+![internet gateway](<images/internet gateway.jpg>)
+
+![create internet gateway](<images/create internet gateway.jpg>)
+
+![create](<images/create igw.jpg>)
+
 ---
 
 Attach the IGW to the test-vpc
 
+![attach](images/attach.jpg)
+
+![attach vpc](<images/attach vpc.jpg>)
+
 ---
 
 select the VPC
+
+![attached](images/attached.jpg)
 
 ---
 
@@ -201,21 +286,35 @@ Now that we have our entrance and exit (Internet Gateway), we need to give direc
 
 Let's go to the route table menu and create a route table for the public subnets.
 
+![route tables](<images/route tables.jpg>)
+
 ---
 
 put name for the route table e.g.. test-vpc-public-rtb and select the desired cpc- "test-vpc
+
+![create route table](<images/create route.jpg>)
+
+![created](images/created.jpg)
 
 ---
 
 Once created, edit the route table, add the default route to the Internet Gateway(IGW)
 
+![edit-route](images/edit-route.jpg)
+
+![edit route](<images/edit route.jpg>)
+
+![route added](<images/route added.jpg>)
+
 ---
 
-after selecting the internet gateway
+after selecting the internet gateway, Next go the public subnet and clik Save Associations
 
----
+![edit association](<images/edit association.jpg>)
 
-Next go the public subnet and clik Save Associations
+![save association](<images/save association.jpg>)
+
+![saved](images/saved.jpg)
 
 ---
 
