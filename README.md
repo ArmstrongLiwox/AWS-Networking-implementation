@@ -7,7 +7,7 @@ The objective of this course is to master the art of AWS networking implementati
 This project will enable me to design and deploy scalable and secure cloud architectures.
 
 ---
-# STUDY NOTES
+# STUDY NOTES AND PROJECT
 ---
 
 # AWS VPC Creation and Subnet Configuration
@@ -406,17 +406,17 @@ Security groups and network access control lists (ACLs) are both important tools
 
 ![Security Group and Network ACLs](<images/security groups.png>)
 
-## Security Groups
-
-
-
 ---
+
+## Security Groups
 
 Security groups can be compared to a bouncer at a club who controls the flow of traffic to and from your resources in a cloud computing environment. 
 
 Imagine you have a club, and you want to ensure that only authorized individuals can enter and exit. 
 
 In this analogy, the club represents your cloud resources (such as virtual machines or instances), and the bouncer represents the security group. 
+
+![security groups](<images/Security Groups (2).png>)
 
 Just like a bouncer checks the IDs and credentials of people at the club's entrance, a security group examines the IP addresses and ports of incoming and outgoing network traffic. 
 
@@ -434,6 +434,8 @@ It's important to note that security groups operate at the instance level, meani
 
 They can be customized and updated as needed to adapt to changing security requirements. Overall, security groups provide an essential layer of security for your cloud resources by allowing you to define and manage access control policies, much like a bouncer regulates who can enter and exit a club.
 
+![security-groups](images/aws-security-group-overview.png)
+
 ---
 
 # Network Access Control Lists {NACLs}
@@ -443,6 +445,8 @@ Network ACLs (Access Control Lists) can be likened to a security guard for a bui
 Imagine you have a building with multiple rooms and entry points, and you want to ensure that only authorized individuals can enter and exit. 
 
 In this analogy, the building represents your subnet, and the security guard represents the network ACL. Similar to a security guard who verifies IDs and credentials before allowing entry into the building, a network ACL examines the IP addresses and ports of incoming and outgoing network traffic. 
+
+![NACL](<images/Network Access Control Lists.jpg>)
 
 It serves as a virtual barrier or perimeter security, defining rules that dictate which types of traffic are permitted or denied. 
 
@@ -455,6 +459,8 @@ They ensure that only traffic meeting the specified criteria is allowed to enter
 It's important to note that network ACLs operate at the subnet level, meaning they control traffic for all instances within a subnet. They provide a broader scope of security compared to security groups, which operate at the instance level. 
 
 Network ACLs are typically stateless, meaning that inbound and outbound traffic is evaluated separately, and specific rules must be defined for both directions. 
+
+---
 
 In summary, network ACLs function as a virtual security guard for your subnet, regulating inbound and outbound traffic at a broader level. 
 
@@ -472,6 +478,8 @@ In short, security groups and network ACLs are both important tools for securing
 
 ## Introduction to VPC Peering
 
+![vpc peering](images/vpc-peering.png)
+
 VPC Peering is a networking feature that allows you to connect two Virtual Private Clouds (VPCs) within the same cloud provider's network or across different regions. 
 
 VPC Peering enables direct communication between VPCs, allowing resources in each VPC to interact with each other as if they were on the same network. 
@@ -479,6 +487,8 @@ VPC Peering enables direct communication between VPCs, allowing resources in eac
 It provides a secure and private connection without the need for internet access. 
 
 VPC Peering is commonly used to establish connectivity between VPCs in scenarios such as multi-tier applications, resource sharing, or data replication.
+
+![vpc network peering](images/network-setup-vpc-peering.png)
 
 ---
 
@@ -501,7 +511,11 @@ Low Latency and High Bandwidth: VPC Peering enables high-performance networking 
 
 VPN (Virtual Private Network) connections establish a secure and encrypted communication channel between your on-premises network and a cloud provider's network, such as a VPC. 
 
-VPN connections enable secure access to resources in the cloud from remote locations or connect on-premises networks with cloud resources. There are two primary types of VPN connections:
+VPN connections enable secure access to resources in the cloud from remote locations or connect on-premises networks with cloud resources. 
+
+![vpn](images/vpn.png)
+
+## There are two primary types of VPN connections:
 
 ## Site-to-Site VPN: 
 
@@ -537,3 +551,9 @@ In summary, VPC Peering enables direct communication between VPCs, simplifying n
 VPN connections establish secure tunnels between on-premises networks and the cloud, enabling secure remote access and facilitating hybrid cloud connectivity. 
 
 Both VPC Peering and VPN connections contribute to building secure, scalable, and efficient network infrastructures in cloud environments.
+
+---
+## SUCCESS
+---
+
+# CONGRATULATIONS
